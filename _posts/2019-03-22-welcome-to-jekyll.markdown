@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Earl's blog!"
-date:   2019-03-22 21:24:59 -0700
+title:  "First Post Yet to Come"
+date:   2019-03-26 12:00:00 -0700
 categories: jekyll update
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
