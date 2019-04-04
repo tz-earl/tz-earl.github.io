@@ -16,10 +16,10 @@ as part of my own learning process.
 <br />
 #### Older, Inactive Blogs ####
 
- **[Optimizely Module: Notes on Converting to Drupal 8](https://optimizely-to-drupal-8.blogspot.com/)**
+ **[Optimizely Module: Notes on Converting to Drupal 8](https://optimizely-to-drupal-8.blogspot.com/)**  
  This was a technical blog I wrote from 2014 to 2017 when I was doing open source work on a module that
  was an extension of the Drupal content management system. The last few posts were not at all about Drupal.
 
-**[Under the Baobab Tree in East Africa](https://diane-and-earl-in-tz.blogspot.com/)**
+**[Under the Baobab Tree in East Africa](https://diane-and-earl-in-tz.blogspot.com/)**  
 This was a blog of personal reflections I wrote from 2009 to 2013 while doing volunteer work abroad in Tanzania.
 It was the experience of a lifetime.
