@@ -6,7 +6,7 @@ permalink: /about/
 
 As I write this, I have spent the past several months in studying machine learning, mostly at the conceptual level.
 
-When I previously wrote a technical blog (see below) I found that coming up with explanations of interesting issues
+When I previously wrote a technical blog I found that coming up with explanations of interesting issues
 and descriptions of troubleshooting bugs brought about more clarity and sharper understanding than I would have
 had otherwise.
 
