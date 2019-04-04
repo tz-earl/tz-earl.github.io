@@ -4,6 +4,12 @@ title:  "A Review of the Deep Learning Specialization from deeplearning.ai"
 date:   2019-04-03 00:00:00 -0700
 categories: 
 ---
+
+<image src="{{ site.url}}/images/logistic-regression.png" alt="Slide on logistic regression" />
+&ndash; A slide from one of the first lectures &ndash;
+<br />
+<hr />
+<br />
 These are a few comments about my experience of taking the [Deep Learning specialization](https://www.coursera.org/specializations/deep-learning) produced by [deeplearning.ai](https://www.deeplearning.ai/) and delivered on the Coursera platform. I completed and was certified in the five courses of the specialization during late 2018 and early 2019.
 
 The courses are:
