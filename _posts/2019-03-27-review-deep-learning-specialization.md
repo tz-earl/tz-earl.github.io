@@ -34,6 +34,12 @@ For reference later, however, I have missed having professionally written and fo
 
 About the downloaded pptx slide decks, many of the individual slides do not render correctly in the LibreOffice Impress program that I use on my Linux systems. But they do display fine in MS PowerPoint, 8-(  That is a serious drawback for the slides.
 
+Here are sample downloaded files from a lecture in the second week of the first course, which is on the topic of Logistic Regression.
+
+Video: <{{ site.url }}/media/week-2-b-logistic-regression.mp4>  
+Slide deck: <{{ site.url }}/media/week-2-b-logistic-regression.pptx>  
+Transcript: <{{ site.url }}/files/week-2-b-logistic-regression.txt>
+
 Quizzes are provided that are automatically graded. The questions are all multiple choice. Some have more than one correct answer, and you have to select all of them to get credit. I found that occasionally that kind of question was worded ambiguously, and it was really hard to answer it correctly. In a few cases I gave up trying even though you can take the same quiz repeatedly, which I would do as a way to better learn the material, including some of the nuances I might have missed otherwise.
 
 Programming exercises in Python are provided and automatically graded. They are done via Jupyter notebooks that are remotely hosted, so you do not need to have anything installed locally. For the most part the exercises were very short with lots of handholding in comments embedded in the code. You write small snippets of code within functions that are already defined.
