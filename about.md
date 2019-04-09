@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+<image src="{{ site.url}}/images/earl-monkish.jpg" alt="Earl Fong" height="120em" width="100em" />
+<br />
 As I write this, I have spent the past several months in studying machine learning, mostly at the conceptual level.
 
 When I previously wrote a technical blog I found that coming up with explanations of interesting issues
