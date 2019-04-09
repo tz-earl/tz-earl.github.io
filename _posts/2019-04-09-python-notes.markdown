@@ -4,7 +4,7 @@ title:  "Python Language - What's Different"
 date:   2019-04-09 00:00:00 -0700
 categories: 
 ---
-These are some notes on things about Python that have caught my attention as I learn the core language coming from a background in PHP, C++ and JavaScript. The items are in no particular order.
+These are some notes on things about Python that have caught my attention as I learn the core language while coming from a background in PHP, C++ and JavaScript. The items are in no particular order.
 
 <br />
 **1)  Blocks of code are defined by indentation, not by braces or keywords**
@@ -302,11 +302,34 @@ Here are two different ways to sum a long sequence of squares. The first uses a 
 ~~~~~
 
 <br />
-**(20)  There are both static and class methods within classes**
+**(20)  There are both static and class methods**
 
-The difference is that class methods take the class object as a first parameter, whereas static methods do not.
+The difference is that class methods take the class object as a first parameter, whereas static methods do not and are like static methods in other languages.
 
 Class methods have two common uses: first, as class factory methods that take different parameters for instantiating an instance of the class; second, for refactoring static methods into smaller helper methods.
+
+~~~~~ python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    @classmethod
+    def from_tuple(cls, coords):  # cls is Point
+        return cls(coords[0], coords[1])
+
+    @classmethod
+    def from_point(cls, point):  # cls is Point
+        return cls(point.x, point.y)
+
+>>> p = Point.from_tuple((32, 47))
+>>> print(p.x, p.y)
+32 47
+
+>>> q = Point.from_point(p)
+>>> print(q.x, q.y)
+32 47
+~~~~~
 
 <br />
 **(21)  Visibility and name mangling**
@@ -317,7 +340,36 @@ There is a convention of starting the name of an attribute with a single undersc
 
 However, if an attribute defined in a class has a name that starts with at least two underscores and trails with no more than one underscore, then its name is mangled in that the internal name of the class is prefixed with the name of the class.
 
-This effectively makes the attribute somewhat of a private one since any use of the same name in a subclass results in a differently mangled internal name.
+This effectively makes the attribute somewhat private since any use of the same name in a subclass results in a differently mangled internal name.
+
+~~~~~ python
+class SomeBase():
+    def __init__(self):
+        self.__color = 'blue'
+    def get_color(self):
+        return self.__color
+
+class SomeChild(SomeBase):
+    def __init__(self):
+        self.__color = 'yellow'
+    def get_color(self):
+        return self.__color
+
+>>> base_obj = SomeBase()
+>>> print(base_obj.get_color())
+blue
+
+>>> child_obj = SomeChild()
+>>> print(child_obj.get_color())
+yellow
+~~~~~
+
+But the attribute is not _truly_ private because if you know how the name is mangled you can access it.
+
+~~~~~ python
+>>> print(base_obj._SomeBase__color)
+blue
+~~~~~
 
 <br />
 **(22)  The @property decorator**
@@ -338,8 +390,9 @@ class Person():
 So in code outside of the class we can write,
 
 ~~~~~ python
-person = Person(42)
-print(person.age)  # like an attribute, not a method call!
+>>> person = Person(42)
+>>> print(person.age)  # like an attribute, not a method call!
+42
 ~~~~~ 
 
 To define a corresponding setter method, there is a special decorator. Assuming the above age( ) method we can write,
@@ -349,7 +402,7 @@ To define a corresponding setter method, there is a special decorator. Assuming 
 def age(self, new_age):
     self.__age = new_age
 
-person.age = 39
+>>> person.age = 39
 ~~~~~ 
 
 <br />
@@ -368,10 +421,11 @@ class Book():
     def __add__(self, other):
         return [self._title, other._title]
 
-b1 = Book()
-b2 = Book('Hello World')
+>>> b1 = Book()
+>>> b2 = Book('Hello World')
 
-print(b1 + b2)    ## output:   ['No Name', 'Hello World']
+>>> print(b1 + b2)
+['No Name', 'Hello World']
 ~~~~~
 
 <br />
@@ -395,9 +449,10 @@ class DictIter():
             return self._dict[self._keys.pop(0)]
         raise StopIteration
 
-# Instantiate a DictIter iterator and use it.
-anim = {'d':'donkey', 'c':'cougar', 'b':'bear', 'a':'aardvark'}
-d_iter = DictIter(anim)
+>>> # Instantiate a DictIter iterator and use it.
+>>> anim = {'d':'donkey', 'c':'cougar', 'b':'bear', 'a':'aardvark'}
+>>> d_iter = DictIter(anim)
 
-print([animal for animal in d_iter])   ## output: ['aardvark', 'bear', 'cougar', 'donkey']
+>>> print([animal for animal in d_iter])
+['aardvark', 'bear', 'cougar', 'donkey']
 ~~~~~
