@@ -18,8 +18,10 @@ body {
   color: $text-color;
   /** EF. 3-28-2019. background-color: $background-color; **/
   /** See https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/ **/
+  /** Also see https://www.w3schools.com/colors/colors_picker.asp  **/
   /* LightCyan == #E0FFFF */
-  background-color: #E0FFFF;
+  /* very light blue == B3F0FF */
+  background-color: #B3F0FF;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
