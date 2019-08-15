@@ -4,9 +4,9 @@ title:  "Using Machine Learning Models to Regress a Multivariate Math Function"
 date:   2019-08-11 00:00:00 -0700
 categories: 
 ---
-My friend Peter is an applied mathematician who did some work in fluid dynamics. He wrote MatLab code to implement a mathematical function that calculates a maximal value of a variable K given four variables as inputs. 
+My friend Peter is an applied mathematician who did some work in fluid dynamics. He wrote MatLab code to implement a mathematical function that calculates a maximal value of a variable K given four variables as inputs. MatLab is a numerical computing environment that includes its own programming language.
 
-As an exercise I decided to try implementing that function using some kind of machine learning (ML) model. I had no other reason for doing so — the function is readily implemented in fewer than two hundred lines of MatLab code that runs fast. This was purely an exploratory exercise as part of my studies in machine learning.
+As an exploratory and fun exercise, I decided to try implementing that function using some kind of machine learning model.
 
 For my purposes it was not necessary to understand the physics of what the inputs and the outputs mean, although it should be noted that the math is somewhat complex in that it applies polynomials in various terms of higher powers.
 
@@ -42,33 +42,68 @@ Peter provided a set of 549 inputs with their outputs as a representative sampli
 
 **theta** ranges continuously from 0.5326 to 1.5708. (it represents angles from 30 degrees to 90 degrees in radians.)
 
-**n** and **m** have three possible discrete pairs of values:  (3, 2), (4, 3) and (9, 4).
+**n** and **m** have three possible pairs of discrete values:  (3, 2), (4, 3) and (9, 4).
 
 **h_star** has three possible discrete values:  0.01, 0.001 and 0.0001.
 
-The output **K** is a real number ranging continuously from 0 to about 4.1. So this can be thought of as a multi-variate regression problem with a continuous real number output.
+The output **K** is a real number ranging continuously from 0 to about 4.1. So this can be somewhat thought of as a multi-variate regression problem with a continuous real number output.
 
 Of the 549 examples in the data set, I used 538 for training and 11 for testing. Initially, the data set was kept in its original order but the ordering was later randomized.
 
 The 11 test examples were chosen in a more or less stratified way in order to represent the discrete and continuous possibilities for the inputs and for the output K.
 
-<hr width="80%" /><br />
+<hr width="80%" />
+<br />
 
 #### **Using neural net models** ####
 
-Almost all of my studies in ML have been in neural nets, so that was where I started. I used the Keras framework with a sequential model that makes it very easy to define the layers and that automatically infers the data flows between the layers.
+Almost all of my studies in ML have been in neural nets, so that was where I started. I used the Keras framework with sequential models that make it very easy to define the layers and that automatically infer the data flows between the layers.
 
 One of the first models simplistically had a single hidden layer of 50 densely-connected units with a densely-connected output layer of 1 unit. The loss function was mean squared error, the optimizer was Adam, and the number of epochs 150.
 
-During training, the loss function bottomed out at a low of about 0.20. After running the trained model on the test data, the mean absolute value of the errors of the predictions was about 0.20. This was 33% off from the correct output values. Not close at all.
+During training, the loss function bottomed out at a low of about 0.20. After running the trained model on the test data, the mean value of the errors of the predictions was 0.20. This was a 33% error from the correct output values. Not close at all.
 
-As it turns out, for the neural nets that I tried that was as good as it got. Permutations included: 
+As it turns out, after trying a number of neural nets that was as good as it got. Model variations included: 
 
-* Varying the number of hidden layers (all fully connected) from one to five
+* Varying the number of hidden layers (all fully connected) between one and five
 * Changing the number of units in the layers
 * Randomizing the order of the training data
 * Increasing the number of training epochs
 * Linearly scaling the four input variables to the interval [0, 1]
 * Using the RMSprop optimizer instead of Adam
 
-Here is a plot of the last run, which is very typical of the results for the neural net models. The x-axis is theta. The y-axis is the output K. The green points are the training data, the orange points are the test data with their correct values, and the red points are the test data with their predicted values. The other three input variables are not included, but these two-dimensional plots do well in showing the shape of the theta variable and the accuracy of the results.
+Here is a plot of the last run, which was very typical of the results for the neural net models. The x-axis is theta. The y-axis is the output K. The blue points are the training data, the orange points are the test data, and the red points are the test input data with their predicted values. The other three input variables are not included, but these two-dimensional plots do show the shape of the theta variable and a visual indication of the accuracy of the results.
+
+<image src="{{ site.url}}/images/theta-K-neural-net.png" alt="Plot of theta against K values for neurl net" />
+<br />
+
+<hr width="80%" />
+<br />
+
+#### **Using decision tree models** ####
+
+While trying different neural nets, I happened to mention this exercise to Brian Spiering, a data science professor. He suggested using random forests instead.
+
+I installed the SciKit-Learn framework, deciding to start even more simply than random forests by creating decision tree models with the DecisionTreeRegressor class.
+
+I varied max_depth for the models but used default values for all other parameters.
+
+Again starting really simplistically, I created a decision tree with max_depth of 1. That resulted in predictions with a mean error of 0.54, which was a mean error percentage of 47%. 
+
+<image src="{{ site.url}}/images/theta-K-decision-tree-depth-1.png" alt="Plot of theta against K values for decision tree with depth 1" />
+<br />
+
+Next, a decision tree with max_depth of 5. I expected a good improvement and got one. The predictions had a mean error of 0.09, which was off by 7.6%.
+
+<image src="{{ site.url}}/images/theta-K-decision-tree-depth-5.png" alt="Plot of theta against K values for decision tree with depth 5" />
+<br />
+
+With a max_depth of 10, the mean error dropped to 0.017 and a mean error percentage of 1.5%. Pretty good!
+
+<image src="{{ site.url}}/images/theta-K-decision-tree-depth-10.png" alt="Plot of theta against K values for decision tree with depth 5" />
+<br />
+
+Finally, I tried running a decision tree with a max_depth of 50 and got exactly the same predictionas as the one with max_depth of 10. There was no improvement at all. 
+
+Future work for me would be to understand exactly how these decision trees work for this somewhat complex regression problem and in particular how max_depth is involved.
+
