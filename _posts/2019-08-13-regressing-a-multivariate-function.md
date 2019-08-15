@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using Machine Learning Models to Regress a Multivariate Math Function"
-date:   2019-08-11 00:00:00 -0700
+date:   2019-08-15 00:00:00 -0700
 categories: 
 ---
 My friend Peter is an applied mathematician who did some work in fluid dynamics. He wrote MatLab code to implement a mathematical function that calculates a maximal value of a variable K given four variables as inputs. MatLab is a numerical computing environment that includes its own programming language.
