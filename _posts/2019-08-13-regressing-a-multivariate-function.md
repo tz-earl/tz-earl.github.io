@@ -58,7 +58,17 @@ The 11 test examples were chosen in a more or less stratified way in order to re
 
 Almost all of my studies in ML have been in neural nets, so that was where I started. I used the Keras framework with a sequential model that makes it very easy to define the layers and that automatically infers the data flows between the layers.
 
-My first model simplistically had a single hidden layer of 50 densely-connected units with a densely-connected output layer of 1 unit. The loss function was mean squared error, the optimizer was Adam, and the number of epochs 150.
+One of the first models simplistically had a single hidden layer of 50 densely-connected units with a densely-connected output layer of 1 unit. The loss function was mean squared error, the optimizer was Adam, and the number of epochs 150.
 
-After running the trained model on the test data, the mean absolute value of the errors was about 0.20. This was about 33% off from the correct output values. Not close at all.
+During training, the loss function bottomed out at a low of about 0.20. After running the trained model on the test data, the mean absolute value of the errors of the predictions was about 0.20. This was 33% off from the correct output values. Not close at all.
 
+As it turns out, for the neural nets that I tried that was as good as it got. Permutations included: 
+
+* Varying the number of hidden layers (all fully connected) from one to five
+* Changing the number of units in the layers
+* Randomizing the order of the training data
+* Increasing the number of training epochs
+* Linearly scaling the four input variables to the interval [0, 1]
+* Using the RMSprop optimizer instead of Adam
+
+Here is a plot of the last run, which is very typical of the results for the neural net models. The x-axis is theta. The y-axis is the output K. The green points are the training data, the orange points are the test data with their correct values, and the red points are the test data with their predicted values. The other three input variables are not included, but these two-dimensional plots do well in showing the shape of the theta variable and the accuracy of the results.
