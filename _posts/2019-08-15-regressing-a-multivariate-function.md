@@ -63,7 +63,7 @@ One of the first models simplistically had a single hidden layer of 50 densely-c
 
 During training, the loss function bottomed out at a low of about 0.20. After running the trained model on the test data, the mean value of the errors of the predictions was 0.20. This was a 33% error from the correct output values. Not close at all.
 
-As it turns out, after trying a number of neural nets that was as good as it got. Model variations included: 
+As it turns out, after trying a number of neural nets I was not able to do any better. Model variations included:
 
 * Varying the number of hidden layers (all fully connected) between one and five
 * Changing the number of units in the layers
@@ -72,9 +72,11 @@ As it turns out, after trying a number of neural nets that was as good as it got
 * Linearly scaling the four input variables to the interval [0, 1]
 * Using the RMSprop optimizer instead of Adam
 
-Here is a plot of the last run, which was very typical of the results for the neural net models. The x-axis is theta. The y-axis is the output K. The blue points are the training data, the orange points are the test data, and the red points are the test input data with their predicted values. The other three input variables are not included, but these two-dimensional plots do show the shape of the theta variable and a visual indication of the accuracy of the results.
+Here is a plot of the last run, which was very typical of the results for the neural net models. The x-axis is theta. The y-axis is the output K. The blue points are the training data, the orange points are the test data, and the red points are the test input data with their predicted values.
 
-<image src="{{ site.url}}/images/theta-K-neural-net.png" alt="Plot of theta against K values for neurl net" />
+The other three input variables are not included, but these two-dimensional plots do show the shape of the theta variable and a visual indication of the accuracy of the results by way of the distance between each orange point and its corresponding red point.
+
+<image src="{{site.url}}/images/theta-K-neural-net.png" alt="Plot of theta against K values for neurl net" />
 <br />
 
 <hr width="80%" />
@@ -82,28 +84,28 @@ Here is a plot of the last run, which was very typical of the results for the ne
 
 #### **Using decision tree models** ####
 
-While trying different neural nets, I happened to mention this exercise to Brian Spiering, a data science professor. He suggested using random forests instead.
+While trying different neural nets, I happened to mention this exercise to Brian, a data science professor. He suggested using random forests instead.
 
-I installed the SciKit-Learn framework, deciding to start even more simply than random forests by creating decision tree models with the DecisionTreeRegressor class.
+I installed the SciKit-Learn framework, deciding to begin even more simply than random forests by creating decision tree models with the DecisionTreeRegressor class.
 
 I varied max_depth for the models but used default values for all other parameters.
 
 Again starting really simplistically, I created a decision tree with max_depth of 1. That resulted in predictions with a mean error of 0.54, which was a mean error percentage of 47%. 
 
-<image src="{{ site.url}}/images/theta-K-decision-tree-depth-1.png" alt="Plot of theta against K values for decision tree with depth 1" />
+<image src="{{site.url}}/images/theta-K-decision-tree-depth-1.png" alt="Plot of theta against K values for decision tree with depth 1" />
 <br />
 
 Next, a decision tree with max_depth of 5. I expected a good improvement and got one. The predictions had a mean error of 0.09, which was off by 7.6%.
 
-<image src="{{ site.url}}/images/theta-K-decision-tree-depth-5.png" alt="Plot of theta against K values for decision tree with depth 5" />
+<image src="{{site.url}}/images/theta-K-decision-tree-depth-5.png" alt="Plot of theta against K values for decision tree with depth 5" />
 <br />
 
 With a max_depth of 10, the mean error dropped to 0.017 and a mean error percentage of 1.5%. Pretty good!
 
-<image src="{{ site.url}}/images/theta-K-decision-tree-depth-10.png" alt="Plot of theta against K values for decision tree with depth 5" />
+<image src="{{site.url}}/images/theta-K-decision-tree-depth-10.png" alt="Plot of theta against K values for decision tree with depth 5" />
 <br />
 
-Finally, I tried running a decision tree with a max_depth of 50 and got exactly the same predictionas as the one with max_depth of 10. There was no improvement at all. 
+I then tried running decision trees with max_depth of 11, 20, and 50 and got exactly the same predictionas as the one with max_depth of 10. There was no improvement at all.
 
-Future work for me would be to understand exactly how these decision trees work for this somewhat complex regression problem and in particular how max_depth is involved.
+Future work: understand exactly how these decision trees work for this somewhat complex regression problem and in particular how max_depth is involved.
 
