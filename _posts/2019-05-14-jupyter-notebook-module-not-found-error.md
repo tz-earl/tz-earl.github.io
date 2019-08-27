@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Within a Jupyter Notebook - ModuleNotFoundError: No module named 'numpy'"
+title:  "Jupyter Notebook - \"ModuleNotFoundError: No module named numpy\""
 date:   2019-05-14 00:00:00 -0700
 categories: 
 ---
