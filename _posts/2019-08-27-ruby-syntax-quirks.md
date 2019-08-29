@@ -18,7 +18,8 @@ works as expected.
 
 But if there is more than one argument, a space between the method name and the opening parenthesis gives a syntax error.
 
-  `puts ('hello', 'world')`
+  `puts ('hello', 'world')`  
+  `>> syntax error, unexpected ')', expecting end-of-input`  
 
 With a single argument the space doesn't matter.
 
@@ -30,7 +31,8 @@ Although I have not verified with the language spec, it looks like an opening pa
 Somewhat similarly, in the following call of `length`, a syntax error occurs because the `-1` is treated as an argument, but `length` takes no arguments.
 
   `arr = [11, 13, 17]`  
-  `last = arr.length -1`
+  `last = arr.length -1`  
+  `>> ArgumentError (wrong number of arguments (given 1, expected 0))`
 
 Remove the space and it works fine, although it looks a little crowded.
 
