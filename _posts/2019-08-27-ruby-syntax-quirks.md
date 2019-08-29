@@ -44,4 +44,38 @@ Or you can make the method call more explicit by using parentheses.
 
 <hr width="80%" />
 <br />
+Commas mean different things but can be a little confusing because Ruby often allows tokens syntactic elements to be omitted.
 
+a) Commas can indicate the elements of an array. For example,
+
+  `m = 5, 7`
+
+is the same as
+
+  `m = [5, 7]`
+
+b) Commas can indicate multiple arguments to a method call. For example,
+
+  `puts k, m, n`
+
+is the same as
+
+  `puts( k, m, n )`
+
+c) On the left side of an assignment, a comma indicates multiple variables to be assigned. For example,
+
+  `k, m = 5, 7`
+
+results in both variables being assigned values concurrently.
+
+d) But then how is the following parsed?
+
+  `j = 4, m = 5, 6`
+
+j is assigned an array of three elements. m is assigned 5. In other words, it is equivalent to
+
+  `j = [4, (m = 5), 6]`
+
+This seems to imply that the assignment operator has both lower and higher precedence than the comma depending on the context. An alternate parsing that seems more consistent would be
+
+  `j = [4, m = [5, 6] ]`
