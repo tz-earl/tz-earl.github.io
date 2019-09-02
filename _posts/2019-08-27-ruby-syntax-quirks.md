@@ -4,7 +4,7 @@ title:  "A Few Syntax Quirks from Ruby"
 date:   2019-08-27 00:00:00 -0700
 categories: 
 ---
-Coming from an academic background in compilers and programming languages, I enjoy getting into the little visited corners of a language. Recently, I have been picking up Ruby and have noticed what I consider to be a couple of syntactic quirks.
+Coming from an academic background in compilers and programming languages, I enjoy getting into the obscure corners of a language. Recently, I have been picking up Ruby and have noticed what I consider to be a couple of syntactic quirks.
 
 <hr width="80%" />
 <br />
@@ -44,7 +44,7 @@ Or you can make the method call more explicit by using parentheses.
 
 <hr width="80%" />
 <br />
-Commas mean different things but can be a little confusing because Ruby often allows tokens syntactic elements to be omitted.
+Commas mean different things but can be a little confusing because Ruby often allows tokens (syntactic elements) to be omitted.
 
 a) Commas can indicate the elements of an array. For example,
 
@@ -60,13 +60,13 @@ b) Commas can indicate multiple arguments to a method call. For example,
 
 is the same as
 
-  `puts( k, m, n )`
+  `puts(k, m, n)`
 
 c) On the left side of an assignment, a comma indicates multiple variables to be assigned. For example,
 
   `k, m = 5, 7`
 
-results in both variables being assigned values concurrently.
+results in both variables being assigned values.
 
 d) But then how is the following parsed?
 
@@ -79,3 +79,32 @@ j is assigned an array of three elements. m is assigned 5. In other words, it is
 This seems to imply that the assignment operator has both lower and higher precedence than the comma depending on the context. An alternate parsing that seems more consistent would be
 
   `j = [4, m = [5, 6] ]`
+
+<hr width="80%" />
+<br />
+Line breaks are significant because a line break may act as a token. For example,
+
+  if n == 43 then m = 2; k = 17 else m = 3; k = 19 end
+
+can be written without 'then' and without the semicolons as
+
+  if n == 43
+    m = 2
+    k = 17
+  else
+    m = 3
+    k = 19
+  end
+
+On the other hand, sometimes a line break is _not_ allowed. For example,
+
+  3.times do |i|
+    puts( i )
+  end
+
+is correct, but the following is not.
+
+  3.times
+  do |i|
+    puts( i )
+  end
