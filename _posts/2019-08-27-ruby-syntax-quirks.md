@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "A Few Syntax Quirks from Ruby"
+title:  "A Few Syntax Quirks in Ruby"
 date:   2019-08-27 00:00:00 -0700
 categories: 
 ---
-Coming from an academic background in compilers and programming languages, I enjoy getting into the obscure corners of a language. Recently, I have been picking up Ruby and have noticed what I consider to be a couple of syntactic quirks.
+Coming from an academic background in compilers and programming languages, I enjoy getting into the obscure corners of a language. Recently, I have been learning Ruby and have noticed what I consider to be a couple of syntactic quirks.
 
 <hr width="80%" />
 <br />
+**Spaces**
+
 Method calls in Ruby allow but do not require parentheses around the arguments. From the code I've seen so far, the common convention seems to be that parentheses are always omitted in simple expressions.
 
 But this flexibility means that spaces are sometimes significant. For instance, 
@@ -44,6 +46,8 @@ Or you can make the method call more explicit by using parentheses.
 
 <hr width="80%" />
 <br />
+**Commas**
+
 Commas mean different things but can be a little confusing because Ruby often allows tokens (syntactic elements) to be omitted.
 
 a) Commas can indicate the elements of an array. For example,
@@ -82,29 +86,38 @@ This seems to imply that the assignment operator has both lower and higher prece
 
 <hr width="80%" />
 <br />
-Line breaks are significant because a line break may act as a token. For example,
+**Line breaks**
 
-  if n == 43 then m = 2; k = 17 else m = 3; k = 19 end
+Finally, line breaks are significant because they act as tokens. For example,
 
-can be written without 'then' and without the semicolons as
+  `if n == 43 then m = 2; k = 17 else m = 3; k = 19 end`
 
-  if n == 43
-    m = 2
-    k = 17
-  else
-    m = 3
-    k = 19
-  end
+is usually written without `then` and without the semicolons as
 
-On the other hand, sometimes a line break is _not_ allowed. For example,
+~~~~~
+if n == 43
+  m = 2
+  k = 17
+else
+  m = 3
+  k = 19
+end
+~~~~~
 
-  3.times do |i|
-    puts( i )
-  end
+But then, sometimes a line break is **not** allowed. For example,
+
+~~~~~
+3.times do |i|
+  puts(i)
+end
+~~~~~
 
 is correct, but the following is not.
 
-  3.times
-  do |i|
-    puts( i )
-  end
+~~~~~
+3.times
+do |i|
+  puts(i)
+end
+>> syntax error, unexpected keyword_do_block, expecting end-of-input
+~~~~~
