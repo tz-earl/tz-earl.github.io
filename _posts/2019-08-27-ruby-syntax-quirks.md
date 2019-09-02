@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Few Syntax Quirks in Ruby"
-date:   2019-08-27 00:00:00 -0700
+date:   2019-9-02 00:00:00 -0700
 categories: 
 ---
 Coming from an academic background in compilers and programming languages, I enjoy getting into the obscure corners of a language. Recently, I have been learning Ruby and have noticed what I consider to be a couple of syntactic quirks.
@@ -14,35 +14,47 @@ Method calls in Ruby allow but do not require parentheses around the arguments. 
 
 But this flexibility means that spaces are sometimes significant. For instance, 
 
-  `puts('hello', 'world')`
+~~~~~ ruby
+puts('hello', 'world')
+~~~~~
 
 works as expected.
 
 But if there is more than one argument, a space between the method name and the opening parenthesis gives a syntax error.
 
-  `puts ('hello', 'world')`  
-  `>> syntax error, unexpected ')', expecting end-of-input`  
+~~~~~ ruby
+puts ('hello', 'world') 
+>> syntax error, unexpected ')', expecting end-of-input
+~~~~~
 
 With a single argument the space doesn't matter.
 
-  `puts('hello')`  
-  `puts ('hello')`
+~~~~~ ruby
+puts('hello')  
+puts ('hello')
+~~~~~
 
 Although I have not verified with the language spec, it looks like an opening parenthesis immediately after a method name is parsed as a token signifying a list of arguments. However, the space causes the parenthesis to be parsed as an argument, that is, it's an expression.
 
-Somewhat similarly, in the following call of `length`, a syntax error occurs because the `-1` is treated as an argument, but `length` takes no arguments.
+Somewhat similarly, in the following call of length, a syntax error occurs because the -1 is treated as an argument, but length takes no arguments.
 
-  `arr = [11, 13, 17]`  
-  `last = arr.length -1`  
-  `>> ArgumentError (wrong number of arguments (given 1, expected 0))`
+~~~~~ ruby
+arr = [11, 13, 17]  
+last = arr.length -1  
+>> ArgumentError (wrong number of arguments (given 1, expected 0))
+~~~~~
 
 Remove the space and it works fine, although it looks a little crowded.
 
-  `last = arr.length-1`
+~~~~~ ruby
+last = arr.length-1
+~~~~~
 
 Or you can make the method call more explicit by using parentheses.
 
-  `last = arr.length() -1`
+~~~~~ ruby
+last = arr.length() -1
+~~~~~
 
 <hr width="80%" />
 <br />
@@ -52,37 +64,53 @@ Commas mean different things but can be a little confusing because Ruby often al
 
 a) Commas can indicate the elements of an array. For example,
 
-  `m = 5, 7`
+~~~~~ ruby
+m = 5, 7
+~~~~~
 
 is the same as
 
-  `m = [5, 7]`
+~~~~~ ruby
+m = [5, 7]
+~~~~~
 
 b) Commas can indicate multiple arguments to a method call. For example,
 
-  `puts k, m, n`
+~~~~~ ruby
+puts k, m, n
+~~~~~
 
 is the same as
 
-  `puts(k, m, n)`
+~~~~~ ruby
+puts(k, m, n)
+~~~~~
 
 c) On the left side of an assignment, a comma indicates multiple variables to be assigned. For example,
 
-  `k, m = 5, 7`
+~~~~~ ruby
+k, m = 5, 7
+~~~~~
 
 results in both variables being assigned values.
 
 d) But then how is the following parsed?
 
-  `j = 4, m = 5, 6`
+~~~~~ ruby
+j = 4, m = 5, 6
+~~~~~
 
 j is assigned an array of three elements. m is assigned 5. In other words, it is equivalent to
 
-  `j = [4, (m = 5), 6]`
+~~~~~ ruby
+j = [4, (m = 5), 6]
+~~~~~
 
 This seems to imply that the assignment operator has both lower and higher precedence than the comma depending on the context. An alternate parsing that seems more consistent would be
 
-  `j = [4, m = [5, 6] ]`
+~~~~~ ruby
+j = [4, m = [5, 6] ]
+~~~~~
 
 <hr width="80%" />
 <br />
@@ -90,11 +118,13 @@ This seems to imply that the assignment operator has both lower and higher prece
 
 Finally, line breaks are significant because they act as tokens. For example,
 
-  `if n == 43 then m = 2; k = 17 else m = 3; k = 19 end`
+~~~~~ ruby
+if n == 43 then m = 2; k = 17 else m = 3; k = 19 end
+~~~~~
 
 is usually written without `then` and without the semicolons as
 
-~~~~~
+~~~~~ ruby
 if n == 43
   m = 2
   k = 17
@@ -104,9 +134,9 @@ else
 end
 ~~~~~
 
-But then, sometimes a line break is **not** allowed. For example,
+But sometimes a line break is **not** allowed. For example,
 
-~~~~~
+~~~~~ ruby
 3.times do |i|
   puts(i)
 end
@@ -114,7 +144,7 @@ end
 
 is correct, but the following is not.
 
-~~~~~
+~~~~~ ruby
 3.times
 do |i|
   puts(i)
