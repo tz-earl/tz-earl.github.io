@@ -4,7 +4,7 @@ title:  "A Simple Example of Consumer-Producer Concurrency with the Python threa
 date:   2019-12-05 00:00:00 -0700
 categories: 
 ---
-As part of my self-study of Python, I wanted to learn how to use concurrency. It turns out there are a number of ways to do this. This post is about an exercise I did using the _threading_ and the _queue_ modules.
+As part of my study of Python, I wanted to learn how to use concurrency. It turns out there are a number of ways to do this. This post is about an exercise I did using the _threading_ and the _queue_ modules.
 
 Concurrency can be tricky to think about correctly and is qualitatively far more difficult to get right than sequential processing.
 
@@ -24,7 +24,7 @@ import random
 ~~~~~
 
 <br />
-The class Producer contains the method that does the producing along with a couple of attributes. "Producing" means adding items to the queue. In this exercise all instances of Producer are producing the same number of items, but that could be easily varied or randomized by the code that creates the instances. A thread terminates when the _produce()_ method completes its loop and then exits.
+The class _Producer_ contains the method that does the producing along with a couple of attributes. "Producing" means adding items to the queue. In this exercise all instances of _Producer_ are producing the same number of items, but that could be easily varied or randomized by the code that creates the instances. A thread terminates when the _produce()_ method completes its loop and then exits.
 
 The _idnum_ attribute is used in the _print_ statement, which gives an indication of the interleaved execution of the threads in an order that is different from the order in which they are created.
 
@@ -50,17 +50,17 @@ class Producer:
 ~~~~~
 
 <br />
-The class Consumer contains the method that does the consuming along with attributes. "Consuming" means removing items from the queue.
+The class _Consumer_ contains the method that does the consuming along with attributes. "Consuming" means removing items from the queue.
 
 Again, the _idnum_ attribute is used in the _print_ statement, which indicates the interleaved execution order of the threads.
 
-But how to terminate the consumer threads? At first, I thought of having the main thread just kill these sub-threads. After some reading, that seems like a really bad idea. As a general policy, a thread should be _requested_ to end itself, giving itself a chance to release any resources it is holding and doing any other desired cleanup.
+But how to terminate the consumer threads? At first, I thought of having the main thread just kill these sub-threads. After some reading, that seems like a really bad idea. As a general policy, a thread should be requested &mdash; not forced &mdash; to end itself, giving itself a chance to release any resources it is holding and doing any other desired cleanup.
 
 In this example, the _stop_consuming_ attribute is initialized to _False_, then set to _True_ by the main thread so that the sub-thread knows when to stop accessing the queue for items to consume.
 
-Note that queue.Queue.get() raises an exception if the queue is empty.
+Note that _queue.Queue.get()_ raises an exception if the queue is empty.
 
-Also note that when removing an item from _Queue_ you also have to call _task_done()_ so that the main thread's _join()_ on the Queue will succeed and not continue to wait. The _join()_ will hang otherwise. 
+Also note that when removing an item from _Queue_ you also have to call _task_done()_ so that the main thread's _join()_ on the queue will succeed and not continue to wait. The _join()_ will hang otherwise.
 
 ~~~~~ python
 class Consumer:
@@ -85,7 +85,7 @@ class Consumer:
 ~~~~~
 
 <br />
-The _time_it()_ function is just a decorator for timing the main thread and displayed its elapsed execution time.
+The _time_it()_ function is just a decorator for timing the main thread and to display its elapsed execution time.
 
 ~~~~~ python
 def time_it(func):
@@ -99,7 +99,7 @@ def time_it(func):
 ~~~~~
 
 <br />
-And the function for the main thread, which creates the producer  and the consumer threads and manages them. In particular, it tells the consumer threads when to stop.
+And the function for the main thread, which creates the producer  and the consumer threads and manages them. It tells the consumer threads when to stop.
 
 ~~~~~ python
 @time_it
