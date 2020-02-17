@@ -6,7 +6,7 @@ categories:
 ---
 While learning about sequence models as part of the [Deep Learning set of courses offered by deeplearning.ai](https://www.deeplearning.ai/deep-learning-specialization/) one of the exercises was to implement bits and chunks of code of a recurrent neural network that was trained on a set of known names of dinosaurs and then used to generate novel dinosaur-sounding names that don't exist.
 
-The following diagram gives an overview of how this RNN works when generating names. There is actually just one cell that is repeatedly activated by a sequence of inputs, where time is moving from left to right. Each input **_x_** consists of a single English letter or a newline character (which is a separator for the names). Each input **_a_** represents internal state that depends on the part of the sequence previously seen.  Each output **_ŷ_** is one letter chosen based on a probability distribution that was created by the training phase. The accumulation of these outputs forms a generated name.
+The following diagram gives an overview of how this RNN works when generating names. There is actually just one cell that is repeatedly activated by a sequence of inputs, where time is moving from left to right. Each input **_x_** consists of a single English letter or a newline character (which is a separator for the names). Each input **_a_** represents internal state that depends on the part of the sequence previously seen.  Each output **_ŷ_** is one letter chosen based on a probability distribution that was created by the training phase. The accumulation of these outputs forms a generated name. (This is not a tutorial on RNNs, so I will not elaborate any further.)
 
 <image src="{{site.url}}/images/rnn-to-generate-names.png" alt="Recurrent neural network to generate names" />
 <br />
@@ -69,15 +69,15 @@ Hachet
 Rouke
 ~~~~~
 
-The values of the loss function quickly flatten out, generating some names that sound pretty good! I especially like **Rawston**, **Raynord**, and **Worton**. The model also generated **Stanfield**, which is an existing name.
+The values of the loss function quickly flatten out, generating some names that sound pretty good! I especially like **Rawston**, **Raynord**, and **Worton**. Occasionally, the model also generated an existing name such as **Stanfield**.
 
 Using the girls names and the combined set yielded similar results. The first iterations more or less produce garbage, then the loss function drops fast and plausible names start to come out.
 
-Some other names that came out of the combined set were **Reynora**, **Wyrth**, and **Lytira**.
+Some other very nice names that came out of the other data sets were **Reynora**, **Wyrth**, and **Lytira**.
 
-<hr width="80%">
-<br />
-I decided to try increasing the number of training iterations and the learning rate.
+#### **Training iterations** ####
+
+I decided to try increasing the number of training iterations.
 
 Increasing the iterations from 40_000 to 50_000 produced:
 
@@ -154,16 +154,65 @@ Edbert
 Won
 ~~~~~
 
-<hr width="80%">
-<br />
+#### **Learning rate** ####
+
 I also tried decreasing the learning rate from the default value of 0.01 to 0.005.
 
-<hr width="80%">
+Again running 70_000 iterations, the tailing results were as follows. The loss decreased, but I don't think the generated names were significantly better.
+
+~~~~~
+Iteration: 68000, Loss: 9.361359
+
+Settowele
+Rele
+Ruynegrattard
+Sedbyn
+Witton
+Paddley
+Wirkley
+
+
+Iteration: 70000, Loss: 9.326370
+
+Setwy
+Regh
+Ruyne
+Sefbroume
+Westan
+Paiford
+Wendels
+~~~~~
+
+And then reducing the learning rate to 0.003.
+
+~~~~~
+Iteration: 68000, Loss: 9.297729
+
+Rayton
+Ramad
+Rownuld
+Radald
+Wisten
+Madburn
+Wiok
+
+
+Iteration: 70000, Loss: 9.504666
+
+Raynord
+Rald
+Rrynselengloorwockley
+Radbith
+Wrondelsdesterodley
+Madburme
+Wiok
+~~~~~
 <br />
-**Later:** while in the midst of writing this blog post, I happened to discover the [blog post by Andrej Karpathy](https://karpathy.github.io/2015/05/21/rnn-effectiveness/) on recurrent neural networks in which he briefly describes using an RNN to generate general baby names. His post was written in 2015 so his work predated mine by several years, 8-D
+This was a very fun exercise to do. I could see other applications of this RNN, such as creating brand names for medications, baby names in other languages (this would work well for Swahili), and mythical place names for fantasy fiction.
+
+**Later:** while in the midst of writing this blog post, I happened to discover the [blog post by Andrej Karpathy](https://karpathy.github.io/2015/05/21/rnn-effectiveness/) on recurrent neural networks in which he briefly describes using an RNN to generate general baby names! His post was written in 2015 so his work predated mine by several years, 8-D
 
 <hr width="80%">
-
 <br />
 **Sources:**
 
