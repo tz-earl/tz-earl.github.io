@@ -158,6 +158,9 @@ Won
 <br />
 I also tried decreasing the learning rate from the default value of 0.01 to 0.005.
 
+<hr width="80%">
+<br />
+**Later:** while in the midst of writing this blog post, I happened to discover the [blog post by Andrej Karpathy](https://karpathy.github.io/2015/05/21/rnn-effectiveness/) on recurrent neural networks in which he briefly describes using an RNN to generate general baby names. His post was written in 2015 so his work predated mine by several years, 8-D
 
 <hr width="80%">
 
@@ -167,9 +170,12 @@ I also tried decreasing the learning rate from the default value of 0.01 to 0.00
 &nbsp;&nbsp;&nbsp;&nbsp;_Sequence Models_  
 &nbsp;&nbsp;&nbsp;&nbsp;<https://www.coursera.org/learn/nlp-sequence-models>
 
-&nbsp;&nbsp;&nbsp;&nbsp;_Old English Female Names_  
-&nbsp;&nbsp;&nbsp;&nbsp;<http://www.top-100-baby-names-search.com/old-english-female-names.html>
+&nbsp;&nbsp;&nbsp;&nbsp;_Old English Girl Names_  
+&nbsp;&nbsp;&nbsp;&nbsp;<http://www.top-100-baby-names-search.com/old-english-girl-names.html>
 
-&nbsp;&nbsp;&nbsp;&nbsp;_Old English Names for Baby Boys_  
-&nbsp;&nbsp;&nbsp;&nbsp;<http://www.top-100-baby-names-search.com/old-english-names-for-baby-boys.html>
+&nbsp;&nbsp;&nbsp;&nbsp;_Old English Boy Names_  
+&nbsp;&nbsp;&nbsp;&nbsp;<http://www.top-100-baby-names-search.com/old-english-boy-names.html>
+
+&nbsp;&nbsp;&nbsp;&nbsp;_The Unreasonable Effectiveness of Recurrent Neural Networks_  
+&nbsp;&nbsp;&nbsp;&nbsp;<https://karpathy.github.io/2015/05/21/rnn-effectiveness/>
 
