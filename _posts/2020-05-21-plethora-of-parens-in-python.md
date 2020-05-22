@@ -62,3 +62,33 @@ def some_func
     ):
     pass
 ~~~~~
+<br />
+**(4) To list superclasses in class definitions**
+
+The list of superclasses can be empty, in which case the parentheses can be omitted. But the class `object` is implied to be the superclass of every class, either directly or indirectly.
+
+~~~~~
+import collections
+
+class MyClass(collections.UserDict):
+    pass
+
+class EmptySuperclassList():
+    pass
+
+class NoParentheses:
+    pass
+~~~~~
+<br />
+**(5) To define tuple literals**
+
+~~~~~
+t = ('I', 'am', 'a', 'tuple')
+~~~~~
+
+Syntax note: to disambiguate an expression containing a single value from a tuple that contains a single value, add a trailing comma to the tuple.
+
+~~~~~
+i_am_an_integer = (42)
+i_am_a_tuple = (42, )
+~~~~~
