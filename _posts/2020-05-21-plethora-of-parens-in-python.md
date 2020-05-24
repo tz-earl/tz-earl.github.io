@@ -9,7 +9,7 @@ As I get more deeply into the ins and outs of core Python, it seems that parenth
 Here are the uses I know about so far.
 
 <br />
-**(1) To group sub-expressions**
+**(1) Group sub-expressions**
 
 Creating sub-expressions within a larger expression, probably originating in math. In software there are two different reasons for these parentheses. First, to override operator precedence so that operators are evaluated in a different order. Second, to make the expression more readable and easier for humans to parse.
 
@@ -26,7 +26,7 @@ w = (x
       + z)
 ~~~~~
 <br />
-**(2) To provide arguments when making calls to functions or methods or other callables**
+**(2) Provide arguments when making calls to functions or methods or other callables**
 
 Callables include classes as well as instances of any class that defines the `__call__()` method.
 
@@ -42,7 +42,7 @@ dd = double_down()  # Create an instance
 dd(1024)  # Call the instance
 ~~~~~
 <br />
-**(3) To list the formal parameters for function and method definitions**
+**(3) List the formal parameters for function and method definitions**
 
 Again, an open parenthesis enables its closing parethesis to be on a subsequent line.
 
@@ -63,7 +63,7 @@ def some_func
     pass
 ~~~~~
 <br />
-**(4) To list superclasses in class definitions**
+**(4) List superclasses in class definitions**
 
 The list of superclasses can be empty, in which case the parentheses can be omitted. But the class `object` is implied to be the superclass of every class, either directly or indirectly.
 
@@ -80,7 +80,7 @@ class NoParentheses:
     pass
 ~~~~~
 <br />
-**(5) To define tuple literals**
+**(5) Tuple literals**
 
 ~~~~~
 t = ('I', 'am', 'a', 'tuple')
@@ -100,8 +100,7 @@ Although it seems seldom used in practice, the use of parentheses to enclose mul
 This also applies to the implicit assignments in _for_ loops.
 
 ~~~~~
-a, b, c = [42, 99, 17]
-
+ a, b, c  = [42, 99, 17]
 (a, b, c) = [42, 99, 17]
 
 (a, b, c) = range(0, 3)  # Iterator on the right-hand side.
@@ -110,3 +109,21 @@ for (x, y) in [(1, 1), (2, 3), (5, 8)]:
     print(x, y)
 ~~~~~
 <br />
+**(7) Generator expressions**
+
+Finally, parentheses are used when defining generator expressions.
+
+~~~~~
+d, e, f, g =  (n for n in range(0, 4))
+~~~~~
+
+When passing a generator as an argument to a callable and it is the only argument, then the parentheses for the expression can be omitted.
+
+~~~~
+def print_iter(it):
+    for item in it:
+        print(item)
+
+print_iter( n for n in range(2, 5) )
+print_iter((n for n in range(2, 5)))
+~~~~
