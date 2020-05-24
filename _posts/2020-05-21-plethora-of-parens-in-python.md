@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "There's a Plethora of Parentheses in Python"
-date:   2020-02-21 00:00:00 -0700
+title:  "There is a Plethora of Parentheses in Python"
+date:   2020-05-22 00:00:00 -0700
 categories: 
 ---
 As I get more deeply into the ins and outs of core Python, it seems that parentheses are syntactically used quite a bit, more than I have encountered in other languages.
@@ -92,3 +92,21 @@ Syntax note: to disambiguate an expression containing a single value from a tupl
 i_am_an_integer = (42)
 i_am_a_tuple = (42, )
 ~~~~~
+<br />
+**(6) Tuple unpacking in assignments**
+
+Although it seems seldom used in practice, the use of parentheses to enclose multiple targets on the left-hand side of an assignment is allowed and is described as _tuple unpacking_.
+
+This also applies to the implicit assignments in _for_ loops.
+
+~~~~~
+a, b, c = [42, 99, 17]
+
+(a, b, c) = [42, 99, 17]
+
+(a, b, c) = range(0, 3)  # Iterator on the right-hand side.
+
+for (x, y) in [(1, 1), (2, 3), (5, 8)]:
+    print(x, y)
+~~~~~
+<br />
