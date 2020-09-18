@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "SQL and Data Modeling for the Web - Comments on the Course"
+title:  '"SQL and Data Modeling for the Web" - Comments on the Udacity Course'
 date:   2020-09-17 00:00:00 -0700
 categories: 
 ---
