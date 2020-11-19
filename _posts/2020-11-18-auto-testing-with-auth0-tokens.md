@@ -8,20 +8,18 @@ As part of a learning exercise, I am writing an API server app implemented in Py
 along with automated tests using the [Python unittest module](https://docs.python.org/3/library/unittest.html).
 
 After knocking out some initial functionality, my partner Ryan (who is writing a frontend as a
-native Android app) and I decided to add authorization of users to restrict access to the API. We
+native Android app) and I decided to add authorization of users to control access to the API. We
 chose the [Auth0 service](https://auth0.com/) for this.
 
 Testing implies that you are simulating a client. That means you must have a valid and 
 unexpired authorization token issued by Auth0.
 
 At the beginning of developing this I tested manually by using [Postman](https://www.postman.com/),
-which is a great tool for
-constructing and sending requests to APIs. To acquire an Auth0 token I used the `curl` command to
-send a request to an Auth0 endpoint that is specific to our account. That token has an expiration of
-twenty-four hours, after which I would just use curl again to get a fresh token.
+which is a great tool for constructing and sending requests to APIs. To acquire an Auth0 token I
+used the `curl` command to send a request to an Auth0 endpoint that is specific to our account.
 
 However, getting the token requires providing secret Auth0 credentials that are unique to our Auth0
-account. You don't want to put these into code that is committed to a public repo.
+account. You don't want to include these in code that is committed to a public repo.
 
 As with other kinds of credentials, e.g. database login, I decided to put the Auth0 ones into
 environment variables, a mechanism which I had already put in place using the Python
@@ -35,13 +33,11 @@ committed to a public repo and is only kept in the intended environment.
 AUTHO_CLIENT_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 AUTHO_CLIENT_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ~~~~~
+<br />
+Following are the contents of `get_auth0.token.py`, where the first several lines fetch the secret
+Auth0 values.
 
-
-Following are the contents of `get_auth0.token.py`. 
-
-The first several lines read the Auth0 values from the environment.
-
-Function`get_auth0_access_token()` uses those values to construct a request to send
+Function`get_auth0_access_token()` then uses those to construct a request to send
 to the Auth0 endpoint, extracts the access token from the response, and returns the token.
 The body of the function is largely copied from Auth0 documentation (which is extensive
 and very well-written).
@@ -90,7 +86,7 @@ if __name__ == '__main__':
     print(access_token)
 
 ~~~~~
-
+<br />
 Finally, the test code calls the above function. Test cases use the returned token to authorize
 themselves as part of their calls to the API server. For example,
 
@@ -110,3 +106,5 @@ class RestaurantsTestCases(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
 
 ~~~~~
+<br />
+Full code on GitHub at  <https://github.com/tz-earl/Espresso>
