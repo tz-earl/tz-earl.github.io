@@ -4,16 +4,18 @@ title:  'Automated Testing API Endpoints with Auth0 Tokens'
 date:   2020-11-18 00:00:00 -0700
 categories: 
 ---
-As part of a learning exercise, I am writing an API server implemented in Python, Flask, et al, 
+As part of a learning exercise, I am writing an API server app implemented in Python, Flask, et al, 
 along with automated tests using the [Python unittest module](https://docs.python.org/3/library/unittest.html).
 
-After knocking out some initial functionality, my partner Ryan (who is writing a frontend as a native Android app) and I decided to add authorization of users to restrict access to the API. We chose
-the [Auth0 service](https://auth0.com/) for this.
+After knocking out some initial functionality, my partner Ryan (who is writing a frontend as a
+native Android app) and I decided to add authorization of users to restrict access to the API. We
+chose the [Auth0 service](https://auth0.com/) for this.
 
 Testing implies that you are simulating a client. That means you must have a valid and 
 unexpired authorization token issued by Auth0.
 
-At the beginning of developing this I tested manually by using Postman, which is a great tool for
+At the beginning of developing this I tested manually by using [Postman](https://www.postman.com/),
+which is a great tool for
 constructing and sending requests to APIs. To acquire an Auth0 token I used the `curl` command to
 send a request to an Auth0 endpoint that is specific to our account. That token has an expiration of
 twenty-four hours, after which I would just use curl again to get a fresh token.
@@ -24,7 +26,7 @@ account. You don't want to put these into code that is committed to a public rep
 As with other kinds of credentials, e.g. database login, I decided to put the Auth0 ones into
 environment variables, a mechanism which I had already put in place using the Python
 [python-dotenv](https://pypi.org/project/python-dotenv/) module. That module uses a `.env` file
-placed at the top of the app directory, that contains variable definitions. That file is never
+placed at the top of the app directory, that contains variable definitions. The file is never
 committed to a public repo and is only kept in the intended environment.
 
 ~~~~~ python
@@ -42,7 +44,7 @@ The first several lines read the Auth0 values from the environment.
 Function`get_auth0_access_token()` uses those values to construct a request to send
 to the Auth0 endpoint, extracts the access token from the response, and returns the token.
 The body of the function is largely copied from Auth0 documentation (which is extensive
-and well-written).
+and very well-written).
 
 ~~~~~ python
 # get_auth0_token.py
