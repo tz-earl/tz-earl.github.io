@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Automated Testing API Endpoints with Auth0 Tokens'
-date:   2020-11-18 00:00:00 -0700
+date:   2020-11-19 00:00:00 -0700
 categories: 
 ---
 As part of a learning exercise, I am writing an API server app implemented in Python, Flask, et al, 
@@ -60,6 +60,10 @@ AUTHO_CLIENT_SECRET = os.environ['AUTHO_CLIENT_SECRET']
 
 
 def get_auth0_access_token():
+    """Retrieves an access token using the Auth0 Client Credentials Flow
+    which is documented at https://auth0.com/docs/flows/client-credentials-flow
+    and at https://auth0.com/docs/api/authentication#client-credentials-flow
+    """
     conn = http.client.HTTPSConnection("espresso-dev.us.auth0.com")
 
     request_items = { "client_id": AUTHO_CLIENT_ID, \
