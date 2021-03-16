@@ -47,7 +47,8 @@ is exposed for Flask to listen to. Note that the app is not actually run here. T
 does that.
 
 For development purposes it was simpler to do all the setup for the app and not have it 
-run here. That way I was able to easily confirm 
+run here. That way I was able to easily confirm all the files were in place, the environment 
+variables set up, and the desired port exposed.
 
 ~~~~~
 # Use this dockerfile to build image espresso
@@ -67,18 +68,16 @@ EXPOSE 5000
 4)  **Run Espresso**. Run the app. At this point all of the setup has been done by the 
 underlying images previously built. This image creates user `earl` and runs the container 
 as that user. Otherwise, the container by default runs as `root`, which is considered a 
-security risk. The dockerfile entrypoint command runs flask upon creation of the container.
+security risk. The dockerfile entrypoint command invokes flask upon creation of the container.
 
-Note that the host is specified as 0.0.0.0 which means any host for the originator of 
-requests for Flask to handle, as long as the request uses port 5000. Otherwise, the value 
+Note that the host for the url request is specified as 0.0.0.0 which means any host for  Flask to respond to as long as the request uses port 5000. Otherwise, the host value 
 defaults to 127.0.0.1 which is localhost, i.e. the container itself. This does not work 
 because requests originate from outside the container.
 
-Specifying any host is not a security 
-risk since the container is "enclosed" by a host system and can only be accessed through 
-requests forwarded by its host.
+Specifying any url host is not a security risk since the container is enclosed by a real 
+(host) system and can only be accessed through requests forwarded by it.
 
-Port 5000 is the default for Flask but this flask command makes it explicit.
+Port 5000 is the default for Flask but this invocation of flask makes the port number explicit.
 
 ~~~~~
 # Use this dockerfile to build image espresso-run
@@ -95,7 +94,61 @@ ENTRYPOINT flask run --host 0.0.0.0 --port 5000
 <hr /><br />
 
 The remainder of this post is about the options provided to `docker run` for instantiating 
-a container that runs the espresso app.
+a container that runs the espresso app in the last image described above.
+
+Each option is described separately, then they are all put together at the end of this post.
+
+**--mount**
+
+Mount the `.env` file on the host system (source) that contains application secrets to a 
+corresponding `.env` file inside the container (target). `readonly` is a good security 
+practice.
+
+~~~~~
+--mount type=bind,source=/home/earl/PycharmProjects/espresso/.env,target=/espresso/.env,readonly
+~~~~~
+
+**-p**
+
+Map port 5055 from the host system to port 5000 of the container. I chose port 5055 
+arbitrarily. Port 5000 matches the port that was exposed in one of the images above as well 
+as the port number specified for the invocation of Flask in the final image.
+
+~~~~~
+-p 5055:5000
+~~~~~
+
+**--cap-drop**
+
+This is a security practice that disables the use of the `setgid()` and `setuid()` functions 
+inside the container. It prevents any malicious code from running as a different user or a 
+different group.
+
+~~~~~
+ --cap-drop SETGID --cap-drop SETUID 
+~~~~~
+
+**--pids-limit**
+
+~~~~~
+--pids-limit 256
+~~~~~
+
+Sets a maximum number processes that can run in the container. Prevents malicious code from 
+forking off an unlimited number of processes, aka "fork bomb". I am just guessing that 256 is 
+a large enough value.
+
+
+**--memory**
+
+On my Ubuntu laptop, this limits real memory but not swap memory so it's of limited effect. 
+However, on a production server the situation may be different and this constraint is 
+hopefully truly effective in that swap memory is also limited.
+
+~~~~~
+--memory 1G
+~~~~~
+
 
 <br />
 
