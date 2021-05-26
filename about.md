@@ -6,14 +6,17 @@ permalink: /about/
 
 <image src="{{ site.url}}/images/earl-monkish.jpg" alt="Earl Fong" height="120em" width="100em" />
 <br />
-As I write this, I have spent the past several months in studying machine learning, mostly at the conceptual level.
+As of this writing in the spring of 2021 I've switched direction, leaving software engineering behind since I was increasingly feeling that it was time for me set out on something different in my career.
 
-When I previously wrote a technical blog I found that coming up with explanations of interesting issues
-and descriptions of troubleshooting bugs brought about more clarity and sharper understanding than I would have
-had otherwise.
+That something different is agile product / project management, more specifically, becoming a scrum master. This makes good use of the better people skills and emotional intelligence I've developed over the years while also leveraging off my background in creating software.  
 
-So my motivation in starting this blog is twofold: that a post here and there might be useful to someone else, and 
-as part of my own learning process.
+<hr />
+<br />
+When I started this blog I had spent several months in studying machine learning, mostly at the conceptual level.
+
+With a previous technical blog I had found that coming up with explanations of interesting issues and descriptions of troubleshooting bugs brought about more clarity and sharper understanding than I would have had otherwise.
+
+So my motivation in starting this blog was twofold: that a post here and there might be useful to someone else, and as part of my own learning process.
 
 <br />
 #### Older, Inactive Blogs ####
