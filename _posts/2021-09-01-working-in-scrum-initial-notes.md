@@ -45,3 +45,29 @@ It's a simple example of how the bulk of our work was loaded towards the latter 
 **&bull; Focus on the sprint backlog during daily scrums**
 
 Our daily scrums have been going well, held in such a way that reminded me of someone’s suggestion that instead of the three questions that are commonly used – “what have you done, what are you planning to do, and any impediments” – keep the focus on the items in the sprint backlog, not on the developers. This helps prevent the daily scrum from devolving into a status reporting session.
+
+**&bull; At sprint retrospectives it’s easy to come up with ideas for improvements**
+
+It’s much harder to manage those ideas, decide which ones to take on, and to follow up and have accountability. We have an ad hoc group of scrum masters and product owners grappling with this. Just how exactly do you implement the team and organizational feedback loops implied by scrum and agile approaches?
+
+**&bull; Being a scrum master is a lot of collaborating, coordinating, and documenting**
+
+Unlike when I was a software engineer writing code, much of scrum master work consists of short tasks that can be completed in small chunks of time. There is much less of a need to have long blocks of time to focus and concentrate. Different kinds of work call for really different working conditions.
+
+This is so relevant to all the current debates around remote vs. on-site work, expected response times to incoming communications such as Slack messages, and generally how interruptible and available one should be to colleagues.
+
+**&bull; The scrum framework, and agility in general, emphasizes dispersed leadership, collaboration, and empowering self-organizing teams**
+
+The synergy of collective thought, judgement, and decisions can be much more effective and creative than the sum of what a collection of individuals can do. This is very much counter-cultural against the kind of command-and-control, top-down management that has been the norm since the beginning of the industrial revolution. There’s a couple of hundred years of inertia and mindset to overcome.
+
+**&bull; Sometimes as a former software developer, I bite my tongue**
+
+As a scrum master for a team of people doing technical work on a website, I think it’s important for me not to give in to the temptation to chime in to interesting technical discussions.
+
+My role is to pay attention to the interactions and the people and to ensure that the discussions are positive and productive and the atmosphere is conducive for people to talk freely.
+
+**&bull; Struggling with the tools for remote collaboration**
+
+As an example, a colleague had created a Slack direct message channel with me without including anyone else. I tried to message back adding @SomeoneElse but the Slackbot said that SomeoneElse would still not be allowed access to the channel.
+
+So it's important to determine at the onset who should be part of a direct message conversation / channel, which Slack apparently considers to be private. It might be a good idea to set up these channels ahead of time before the conversation begins in order to make sure all the needed people are included.
