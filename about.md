@@ -8,7 +8,7 @@ permalink: /about/
 <br />
 As of this writing in the spring of 2021 I've switched direction, leaving software engineering behind since I was increasingly feeling that it was time for me set out on something different in my career.
 
-That something different is agile product / project management, more specifically, becoming a scrum master. This makes good use of the better people skills and emotional intelligence I've developed over the years while also leveraging off my background in creating software.  
+That something different is agile project / product management, more specifically, becoming a scrum master. This makes good use of the better people skills and emotional intelligence I've developed over the years while also leveraging off my background in creating software.
 
 <hr />
 <br />
