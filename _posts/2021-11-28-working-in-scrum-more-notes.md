@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  'Working in Scrum – More Notes'
-date:   2021-11-24 00:00:00 -0700
+date:   2021-11-29 00:00:00 -0700
 categories: 
 ---
 I am now in my third sprint as a volunteer scrum master with Silicon Valley Project Management, an organization that provides experiential learning through enhancing and building out a live website. 
@@ -23,20 +23,25 @@ We had a lot of uncertainty around the results of sprint retrospectives. They we
 
 Eventually, one of our mentors initiated a process that we've been experimenting with.
 
-I believe the following steps are from the book _Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days_, by Jake Knapp.
+I believe the following steps are from the book [_Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days_](https://www.amazon.com/Sprint-Solve-Problems-Test-Ideas/dp/150112174X/), by Jake Knapp.
 
-(0)  Physically group items by category, e.g. "improve how meetings are conducted", so that you can readily see related or similar items.  
-(1)  Vote on the items by using silent dot voting.  
-(2)  Arrange items by number of votes by placing them along a horizontal line.  
-(3)  Using a four-quadrant chart, position the most-voted items along the two axes of impact vs. effort.  
-(4)  Favoring those items that are high impact and low effort, make them actionable by brainstorming specific solutions and tasks.  
-(5)  Finally, create and define retrospective backlog items.  We then used a Kanban-like task board to organize and manage the workflow.  
+0)  Physically group items by category, e.g. "improve how meetings are conducted", so that you can readily see related or similar items.
+
+1)  Vote on the items by using silent dot voting.
+
+2)  Arrange items by number of votes by placing them along a horizontal line.
+
+3)  Using a four-quadrant chart, position the most-voted items along the two axes of impact vs. effort.
+
+4)  Favoring those items that are high impact and low effort, make them actionable by brainstorming specific solutions and tasks.
+
+5)  Finally, create and define retrospective backlog items.  We then used a Kanban-like task board to organize and manage the workflow.
 
 **&bull; For visibility and transparency the burndown chart can be published after every daily scrum.**
 
 It's a small thing but it helps to keep everyone on the scrum team apprised as to how overall progress is being made towards meeting the sprint goals _by the team_ and not just be the individual developers.  
 
-**&bull; Use team building activities such as the following within small-group breakouts (with thanks to Don Colliver)**
+**&bull; Use team building activities such as the following within small-group breakouts** (with thanks to [Don Colliver](https://www.doncolliver.com/))
 
 Questions / Tasks:
 1. Location
@@ -57,12 +62,14 @@ The Team Cheer exercises were ridiculously fun and hilarious.
 
 **&bull; Sometimes just agreeing on and setting a time for a recurring meeting is enough to build momentum and enable progress**
 
-We were forming and storming a new team with a charter different from the existing teams. I felt that we were making little progress towards getting organized, so I merely proposed that we have a weekly standing meeting as a way to get started. That simple cadence seems to keep us going in spite of being unsure of our priorities and our workflow.
+We were forming and storming a new team with a charter different from the existing teams. I felt that we were making little progress towards getting organized, so I merely proposed that we have a weekly standing meeting as a way to get started. That simple cadence has kept us going in spite of being unsure of our priorities and our workflow.
 
 It's a good example of making a small, low-risk experiment to see whether a particular process or procedure is productive. The potential downside is that an experiment becomes fossilized as "the way we do things", so it's essential to hold on lightly and be willing to let go.
 
+**&bull; The [_lean coffee_](http://leancoffee.org) format is a great way to host an open, agenda-less discussion**
 
-<hr />
+I've been regularly attending a lean coffee office hour hosted by Chris Sims at [Agile Learning Labs](https://agilelearninglabs.com). I love the idea of having the attendees propose what to talk about, having those topics/questions voted on, and democratically deciding what to discuss and for how long.
 
-** The “lean coffee” format is a great way to host an open, agenda-less discussion.
+And I recently hosted my own lean coffee meetup of a few of our scrum masters. Not only were people engaged, but as the facilitator I did not have to bear the burden of deciding on the agenda. Win-win all around.
 
+I used the [Lean Coffee Table](https://agilelearninglabs.com) service which works really well for doing lean coffee remotely. The user interface is simple and intuitive for both attendees and for the facilitator.
