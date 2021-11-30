@@ -68,8 +68,8 @@ It's a good example of making a small, low-risk experiment to see whether a part
 
 **&bull; The [_lean coffee_](http://leancoffee.org) format is a great way to host an open, agenda-less discussion**
 
-I've been regularly attending a lean coffee office hour hosted by Chris Sims at [Agile Learning Labs](https://agilelearninglabs.com). I love the idea of having the attendees propose what to talk about, having those topics/questions voted on, and democratically deciding what to discuss and for how long.
+I've been regularly attending a lean coffee office hour hosted by Chris Sims at [Agile Learning Labs](https://agilelearninglabs.com). I love having the attendees propose what to talk about, having those topics/questions voted on, and democratically deciding what to discuss and for how long.
 
-And I recently hosted my own lean coffee meetup of a few of our scrum masters. Not only were people engaged, but as the facilitator I did not have to bear the burden of deciding on the agenda. Win-win all around.
+I recently hosted my own lean coffee meetup of a few of our scrum masters. Not only were people engaged, but as the facilitator I did not have to bear the burden of deciding on the agenda. Win-win all around.
 
 I used the [Lean Coffee Table](https://agilelearninglabs.com) service which works really well for doing lean coffee remotely. The user interface is simple and intuitive for both attendees and for the facilitator.
