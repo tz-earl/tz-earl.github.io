@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'Lesson Learned - Stay Calm in the Face of Anger'
+title:  'Stay Calm in the Face of Anger'
 date:   2022-06-08 00:00:00 -0700
 categories: 
 ---
