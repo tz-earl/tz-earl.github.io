@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'Lesson Learned - Be Transparent'
+title:  "Be Transparent, Don't Disappear Down a Rabbit Hole"
 date:   2022-07-15 00:00:00 -0700
 categories: 
 ---
