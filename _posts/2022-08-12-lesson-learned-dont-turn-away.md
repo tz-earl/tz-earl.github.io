@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Lesson Learned - Don't Turn Away
+title:  Don't Turn Away When Shit Happens
 date:   2022-08-12 00:00:00 -0700
 categories: 
 ---
