@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  'Working in Scrum – More Notes'
+title:  'More on Working in Scrum'
 date:   2021-11-29 00:00:00 -0700
 categories: 
 ---
