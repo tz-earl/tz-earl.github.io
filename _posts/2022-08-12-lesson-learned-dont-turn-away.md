@@ -10,6 +10,4 @@ It wasn’t surprising that people were being let go. What was surprising to me 
 
 Having been laid off twice myself with no notice, I knew what an emotional and financial blow it could be. So I took it on myself to privately email those people to acknowledge and recognize the pain that they might be going through. One of them wrote back to thank me for doing so.
 
-Lesson reinforced:
-
 *Life is sometimes painful, shitty, and unfair &ndash; we should not turn our eyes away from that. Doing so denies the humanity and the suffering of  our colleagues and fellow human beings.*
