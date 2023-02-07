@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Don't Get Hung Up on Your Job Title
+title:  Practice Agility – Don't Get Hung Up on Your Job Title
 date:   2023-02-04 00:00:00 -0700
 categories: 
 ---
