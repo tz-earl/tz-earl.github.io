@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  '"High probability of failure does not equal bad economics"'
-date:   2023-02-23 00:00:00 -0700
+date:   2023-03-03 00:00:00 -0700
 categories: 
 ---
 I have been reading again the book <em><strong>The Principles of Product Development Flow</strong></em> by Donald Reinertsen. His reasoning is so precise and so refreshing in how it debunks various ideas that are intuitively appealing but incorrect. There are well over a hundred principles that encapsulate his thinking and observations.
