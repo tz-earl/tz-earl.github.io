@@ -22,3 +22,7 @@ Another field is that of venture capitalists investing in business start-ups. Th
 
 It's the same concept, though: a high rate of failure is not necessarily a bad business call. It depends on the economics and the probabilities.
 
+<hr style="width:80%; margin:auto" /><br />
+I am reminded of an entirely different, non-business activity that many of us have done: dating to find a long-term partner. You might go through a lot of relationships that end up going nowhere, with attendant emotional pain and heartbreak. They feel like failures.
+
+And then you might get a big lifelong payoff. In my case I've now been happily married for over twenty years.
