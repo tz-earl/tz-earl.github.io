@@ -17,7 +17,7 @@ That incident bothered me enough to nudge me into consciously striving to be bet
 I’m finding it takes some *effort* to keep my attention on one thing at a time. It's as though my default state of mind has become that of being easily and constantly distracted. 
 
 So why am I bothering to make this change? I feel calmer and less fragmented because of less context-switching. I feel more of a sense of accomplishment that is very satisfying. I'm happier. At this early point I can't say yet whether I'm more productive. But I do strongly suspect that that will turn out to be the case.
-<br />
+<br /><br />
 <hr style="width:90%;margin-left:5%" />
 <br />
 # Small chunks of work time,  July 2023 #
@@ -27,7 +27,7 @@ Unlike the highly focused, long blocks of time I needed as a software engineer, 
 So I find that a fragmented schedule has not been an impediment to being productive in the role. While there is still a need to maintain focus, use time efficiently, and not be easily distracted, the situation is much less demanding. I find that having a personal policy of a half hour buffer between meetings works really well.
 
 This aspect of managing your attention really depends on the kind of work you do.
-<br />
+<br /><br />
 <hr style="width:90%;margin-left:5%" />
 <br />
 # A corporation is not a family!  July 2023 #
@@ -39,7 +39,7 @@ My family consists of my wife, my siblings and their children, and a handful of 
 A corporation is an *entirely different thing*. If it's a for-profit company, its purpose is to be successful in the marketplace. If it's a nonprofit, its purpose is to fulfill its mission. The correct analogy is that it's like a sports team. The people I work with are my esteemed colleagues and teammates to whom I owe respect, civility, and collaboration. I care about them - but they are not my family. Every one of us is potentially expendable.
 
 If you talk about being "family" in a corporate context, you're sounding like an organizational flack. Please stop. It poisons your credibility and makes you look ridiculous and emotionally manipulative in a very lame way.
-<br />
+<br /><br />
 <hr style="width:90%;margin-left:5%" />
 <br />
 # Slack channels - group vs. DM,   June 2023 #
@@ -55,7 +55,7 @@ Unlike working on-site and in-person where you might overhear people talking or 
 They are kept in the dark and prevented from possibly contributing to the conversation. We should be aware of that and work against it.
 
 Of course, there are times when you have something truly private to deal with.
-<br />
+<br /><br />
 <hr style="width:90%;margin-left:5%" />
 <br />
 # When meeting remotely, please use more pauses,  May 2023 #
