@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Random Posts Published on LinkedIn"
+title:  "Doing One Thing at a Time, et al. (published on LinkedIn)"
 date:   2023-10-25 00:00:00 -0700
 categories: 
 ---
