@@ -4,6 +4,13 @@ title:  "Limiting WIP / Throughput of cars on a highway"
 date:   2023-12-29 00:00:00 -0700
 categories: 
 ---
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
 In agile approaches to managing projects, when thinking about limiting WIP (work in progress) sometimes I think of the movement of traffic on a highway as a metaphor to reinforce my intuition for the practice. After all, we’ve all felt the frustration and the tedium of crawling along in bumper to bumper traffic.
 
 That said, does limiting the number of cars on a highway actually improve the throughput of the system as a whole? By throughput, I mean that given a fixed point on the highway, does having fewer cars going faster mean that more cars pass the point in a given amount of time as opposed to packing a lot of cars in the same space that are going slower?
@@ -15,11 +22,22 @@ I did some quick, back-of-the-envelope calculations. I made some simplifying ass
 - The length of a car is 14 feet.
 - Each driver maintains a gap, a.k.a. “headway”, of 3 seconds of travel time between themselves and the car ahead of them as a buffer.
 
-Here are the calculations I got using approximate values.
+Here are the calculations I got using approximate values:
 
-<< need table here >>
+| Speed in MPH | Headway + car length | Number of cars per mile | Number of cars per minute |
+|:------------:|:--------------------:|:-----------------------:|:-------------------------:|
+|  3   |  27   |  196  |  10    |
+|  5   |  36   |  147  |  12    |
+|  10  |  58   |  91   |  15    |
+|  20  |  102  |  52   |  17    |
+|  30  |  102  |  36   |  18    |
+|  40  |  102  |  28   |  18.5  |
+|  50  |  102  |  23   |  18.8  |
+|  60  |  102  |  19   |  19    |
+|  70  |  102  |  16   |  19.1  |
+|  80  |  102  |  14   |  19.2  |
 
-Following is a scatter plot of (Speed in MPH) x (Number of cars per minute)
+Following is a scatter plot of (Speed in MPH) x (Number of cars per minute):
 
 << scatter plot here >>
 
