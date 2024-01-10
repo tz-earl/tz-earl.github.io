@@ -37,9 +37,11 @@ Here are the calculations I got using approximate values:
 |  70  |  102  |  16   |  19.1  |
 |  80  |  102  |  14   |  19.2  |
 
-Following is a scatter plot of (Speed in MPH) x (Number of cars per minute):
+Following is a scatter plot showing number of cars per minute vs. speed:
 
-<< scatter plot here >>
+<image src="{{site.url}}/images/speed-vs-throughput-plot.png" alt="Recurrent neural network to generate names" />
+<br />
+
 
 At 3 MPH there are 196 cars in the space of one mile, so while space utilization is very high, throughput is only about 10 cars per minute.
 
@@ -49,4 +51,4 @@ It looks like broadly speaking, traffic throughput is a supportive metaphor for 
 
 Interestingly, when I posed this problem to ChatGPT, part of its response was:
 
- “In a real-world scenario, the specific speed at which the maximum number of cars pass a given point depends on various factors, including driver behavior, road conditions, vehicle type, and traffic control measures. In ideal conditions and ignoring external factors, the speed where the maximum flow happens is typically around 45-55 miles per hour for many highways.”
+ >In a real-world scenario, the specific speed at which the maximum number of cars pass a given point depends on various factors, including driver behavior, road conditions, vehicle type, and traffic control measures. In ideal conditions and ignoring external factors, the speed where the maximum flow happens is typically around 45-55 miles per hour for many highways.
